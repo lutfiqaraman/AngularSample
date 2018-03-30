@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Photo</title>
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/script.js"></script>
+</head>
+<body data-ng-app = "PhotoInfoModule">
+<div ng-controller = "PhotoInfoController">
+    <div>
+        Name : {{ photoinfo.name }}
+    </div>
+
+    <div>
+        City : {{photoinfo.city}}
+    </div>
+
+    <div>
+        <img data-ng-src="{{ photoinfo.photo }}" style="height: 300px; width: 600px" alt="{{photoinfo.name}}">
+    </div>
+</div>
+</body>
+</html>

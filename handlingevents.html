@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Handling Events</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/script.js"></script>
+
+</head>
+<body data-ng-app="HEModule">
+<div ng-controller="HEController">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Likes</th>
+                <th>Dislikes</th>
+                <th>Likes / Dislikes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat = "technology in technologies">
+                <td>{{ technology.name }}</td>
+                <td>{{ technology.likes }}</td>
+                <td>{{ technology.dislikes }}</td>
+                <td>
+                    <input type="button" value="Like" data-ng-click = "increase_likes(technology)">
+                    <input type="button" value="Dislike" data-ng-click = "increase_dislikes(technology)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

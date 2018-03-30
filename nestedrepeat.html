@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Neasted Repeat</title>
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/script.js"></script>
+</head>
+<body>
+<div data-ng-app = "NGNeastedRepeatModule" ng-controller = "NGNeastedRepeatController">
+    <ul>
+        <li ng-repeat="country in countries">
+            {{country.name}}
+            <ul>
+                <li ng-repeat="city in country.cities">
+                     {{$index + 1}} - {{city.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
