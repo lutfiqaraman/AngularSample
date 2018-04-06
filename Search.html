@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Search</title>
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/script.js"></script>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body  data-ng-app="SearchModule">
+
+Search : <input type="text" placeholder="Search Employee" ng-model="searchText.name">
+
+<br/> <br/>
+
+<table ng-controller="SearchController">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>City</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="emp in employees | filter: searchText">
+            <td>{{ emp.name }}</td>
+            <td> {{ emp.gender }}</td>
+            <td> {{ emp.salary }}</td>
+            <td> {{ emp.city }}</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
