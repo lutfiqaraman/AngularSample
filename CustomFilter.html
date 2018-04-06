@@ -26,7 +26,7 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="emp in employees | filter : search">
+    <tr ng-repeat="emp in employees">
         <td>{{ emp.name }}</td>
         <td> {{ emp.gender | gender }}</td>
         <td> {{ emp.salary }}</td>
