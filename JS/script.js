@@ -126,3 +126,50 @@ angular
             {name: "Todd", gender: "Male", salary: 95000, city: "Amman"}
         ]
     });
+
+angular
+    .module("MultiSearchModule", [])
+    .controller("MultiSearchController", function ($scope) {
+        $scope.employees = [
+            {name: "Ben",  gender: "Male", salary: 55000, city: "London"},
+            {name: "Sara", gender: "Female", salary: 60000, city: "Chennai"},
+            {name: "Mark", gender: "Male", salary: 57000, city: "London"},
+            {name: "Pam",  gender: "Female", salary: 70000, city: "New York"},
+            {name: "Todd", gender: "Male", salary: 95000, city: "Amman"}
+        ];
+
+        $scope.search = function (item) {
+
+            if ($scope.searchText === undefined)
+                return true;
+            else {
+                if (item.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 ||
+                    item.city.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1)
+                    return true;
+            }
+
+            return false;
+        };
+    });
+
+angular
+    .module("CustomFilterModule", [])
+    .filter("gender", function () {
+        return function (gender) {
+            switch (gender) {
+                case 1:
+                    return "Male";
+                case 2:
+                    return "Female";
+            }
+        }
+    })
+    .controller("CustomFilterController", function ($scope) {
+        $scope.employees = [
+            {name: "Ben",  gender: 1, salary: 55000, city: "London"},
+            {name: "Sara", gender: 2, salary: 60000, city: "Chennai"},
+            {name: "Mark", gender: 1, salary: 57000, city: "London"},
+            {name: "Pam",  gender: 2, salary: 70000, city: "New York"},
+            {name: "Todd", gender: 1, salary: 95000, city: "Amman"}
+        ];
+    });

@@ -10,7 +10,7 @@
 </head>
 <body  data-ng-app="SearchModule">
 
-Search : <input type="text" placeholder="Search Employee" ng-model="searchText.name">
+Search : <input type="text" placeholder="Search Employee" ng-model="searchText">
 
 <br/> <br/>
 
@@ -26,7 +26,7 @@ Search : <input type="text" placeholder="Search Employee" ng-model="searchText.n
     </thead>
 
     <tbody>
-        <tr ng-repeat="emp in employees | filter: searchText">
+        <tr ng-repeat="emp in employees | filter : searchText">
             <td>{{ emp.name }}</td>
             <td> {{ emp.gender }}</td>
             <td> {{ emp.salary }}</td>

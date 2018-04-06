@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Custom Filter</title>
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/script.js"></script>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body  data-ng-app="CustomFilterModule">
+
+<div>
+    <h3>Employee Table</h3>
+</div>
+
+<table ng-controller="CustomFilterController">
+
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>City</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="emp in employees | filter : search">
+        <td>{{ emp.name }}</td>
+        <td> {{ emp.gender | gender }}</td>
+        <td> {{ emp.salary }}</td>
+        <td> {{ emp.city }}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

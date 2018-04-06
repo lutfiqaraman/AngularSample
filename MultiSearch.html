@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Multi-Search</title>
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/script.js"></script>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body  data-ng-app="SearchModule">
+
+<input type="text" placeholder="Search name" ng-model="searchText.name">
+<input type="text" placeholder="Search city" ng-model="searchText.city">
+
+<input id="exactMatch" type="checkbox" ng-model="exactMatch">
+<label for="exactMatch">Exact Match</label>
+
+<div>
+    <h3>Employee Table</h3>
+</div>
+
+<table ng-controller="SearchController">
+
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>City</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="emp in employees | filter : searchText : exactMatch">
+        <td>{{ emp.name }}</td>
+        <td> {{ emp.gender }}</td>
+        <td> {{ emp.salary }}</td>
+        <td> {{ emp.city }}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
