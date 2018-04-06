@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS - Multi-Search Single Box</title>
+    <script src="JS/angular.min.js"></script>
+    <script src="JS/script.js"></script>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body  data-ng-app="HideShowModule">
+
+<input type="checkbox" id="HideSalary" ng-model="hideSalary">
+<label for="HideSalary">Hide Salary</label>
+
+<div>
+    <h3>Employee Table</h3>
+</div>
+
+<table ng-controller="HideShowController">
+
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>City</th>
+        <th ng-hide="hideSalary">Salary</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="emp in employees">
+        <td>{{ emp.name }}</td>
+        <td> {{ emp.gender }}</td>
+        <td> {{ emp.city }}</td>
+        <td ng-hide="hideSalary"> {{ emp.salary }}</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -173,3 +173,15 @@ angular
             {name: "Todd", gender: 1, salary: 95000, city: "Amman"}
         ];
     });
+
+angular
+    .module("HideShowModule", [])
+    .controller("HideShowController", function ($scope) {
+        $scope.employees = [
+            {name: "Ben",  gender: "Male", salary: 55000, city: "London"},
+            {name: "Sara", gender: "Female", salary: 60000, city: "Chennai"},
+            {name: "Mark", gender: "Male", salary: 57000, city: "London"},
+            {name: "Pam",  gender: "Female", salary: 70000, city: "New York"},
+            {name: "Todd", gender: "Male", salary: 95000, city: "Amman"}
+        ];
+    });
